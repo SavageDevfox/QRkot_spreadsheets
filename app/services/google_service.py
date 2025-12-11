@@ -6,10 +6,6 @@ FORMAT = '%Y/%m/%d %H:%M:%S'
 
 
 async def create_spreadsheets(wrapper_services: Aiogoogle) -> str:
-    """
-    Заглушка: возвращает фиктивный spreadsheet_id.
-    На данном этапе таблица НЕ создаётся реально.
-    """
     return '1huc9h8xEvI1naf527RPknyCtgTyz4mykFPK2aTzyALU'
 
 
@@ -17,9 +13,6 @@ async def set_user_permissions(
         spreadsheetid: str,
         wrapper_services: Aiogoogle
 ) -> None:
-    """
-    Заглушка: реальные права НЕ устанавливаются.
-    """
     return None
 
 
