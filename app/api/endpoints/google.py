@@ -1,3 +1,5 @@
+from urllib.parse import urljoin
+
 from aiogoogle import Aiogoogle
 from fastapi import APIRouter, Depends
 
@@ -8,6 +10,7 @@ from app.services.google_service import (
     create_spreadsheets, set_user_permissions, update_spreadsheets_value
 )
 
+TABLE_BASE_URL = 'https://docs.google.com/spreadsheets/d/'
 router = APIRouter()
 
 
@@ -22,6 +25,5 @@ async def update_tables_data(
     await update_spreadsheets_value(spreadsheet_id, projects, wrapper_services)
     return {
         "status": "success",
-        "spreadsheet_id": spreadsheet_id,
-        "projects_processed": len(projects)
+        "report_url": urljoin(TABLE_BASE_URL, spreadsheet_id)
     }
