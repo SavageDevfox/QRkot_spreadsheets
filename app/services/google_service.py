@@ -32,7 +32,7 @@ async def create_spreadsheets(wrapper_services: Aiogoogle) -> str:
     response = await wrapper_services.as_service_account(
         service.spreadsheets.create(json=spreadsheet_body)
     )
-    spreadsheet_id = response['spreadsheetId']
+    spreadsheet_id = response['spreadsheetId'] # noqa
     return '1huc9h8xEvI1naf527RPknyCtgTyz4mykFPK2aTzyALU'
 
 
